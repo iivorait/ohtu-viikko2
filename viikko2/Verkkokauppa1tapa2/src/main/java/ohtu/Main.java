@@ -13,12 +13,13 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/resources/spring-context.xml");
 
-       // Kauppa kauppa = ctx.getBean(Kauppa.class);        
-        Kirjanpito kirjanpito = (Kirjanpito) ctx.getBean("kirjanpito"); //new Kirjanpito();
-        Varasto varasto = (Varasto) ctx.getBean("varasto"); //new Varasto(kirjanpito);
-        Pankki pankki = (Pankki) ctx.getBean("pankki"); //new Pankki(kirjanpito);
-        Viitegeneraattori viitegen = (Viitegeneraattori) ctx.getBean("viitegeneraattori"); //new Viitegeneraattori();
-        Kauppa kauppa = new Kauppa(varasto, pankki, viitegen);
+        Kauppa kauppa = ctx.getBean(Kauppa.class);
+        
+//        Kirjanpito kirjanpito = ctx.getBean(Kirjanpito.class); //new Kirjanpito();
+//        Varasto varasto = ctx.getBean(Varasto.class); //new Varasto(kirjanpito);
+//        Pankki pankki = ctx.getBean(Pankki.class); //new Pankki(kirjanpito);
+//        Viitegeneraattori viitegen = ctx.getBean(Viitegeneraattori.class); //new Viitegeneraattori();
+//        Kauppa kauppa = new Kauppa(varasto, pankki, viitegen);
         
 
         //kauppa = new Kauppa();
